@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rekalp - Train with intent</title>
+<meta name="description" content="Rekalp is a gym training log: plan workouts, log every set, track personal records and stats, all synced across your devices.">
+<style>
+  :root {
+    --accent: #ff6b1a;
+    --accent-dark: #e8590f;
+    --accent-soft: #fff4ec;
+    --ink: #1c1c1e;
+    --muted: #5b5b60;
+    --line: #e7e5e2;
+    --card-bg: #ffffff;
+    --page-bg: #f6f4f1;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--page-bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ---- Nav ---- */
+  nav.topbar {
+    padding: 20px 0;
+  }
+  nav.topbar .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .nav-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+  }
+  .nav-link:hover { border-color: var(--accent); }
+
+  /* ---- Hero ---- */
+  .hero {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+    border-radius: 28px;
+    margin: 4px 16px 0;
+    padding: clamp(32px, 6vw, 64px) clamp(20px, 6vw, 56px);
+    overflow: hidden;
+  }
+  @media (min-width: 900px) {
+    .hero { margin: 4px auto 0; max-width: 1120px; }
+  }
+  .hero-inner {
+    display: flex;
+    align-items: center;
+    gap: clamp(24px, 5vw, 56px);
+    flex-wrap: wrap;
+  }
+  .hero-copy { flex: 1 1 380px; }
+  .hero-logo { width: clamp(140px, 22vw, 190px); margin-bottom: 28px; display: block; }
+  .hero-logo svg { width: 100%; height: auto; display: block; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(255,255,255,0.18);
+    padding: 6px 12px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    color: #fff;
+    font-size: clamp(30px, 4.2vw, 46px);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin: 0 0 18px;
+  }
+  .hero p.lead {
+    color: rgba(255,255,255,0.92);
+    font-size: 17px;
+    max-width: 480px;
+    margin: 0 0 30px;
+  }
+  .store-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .store-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0,0,0,0.22);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 13px;
+    line-height: 1.25;
+  }
+  .store-badge svg { width: 22px; height: 22px; flex-shrink: 0; }
+  .store-badge .store-label { font-weight: 700; display: block; font-size: 13px; }
+  .store-badge .store-sub { opacity: 0.8; font-size: 11px; }
+
+  .hero-media { flex: 0 0 auto; margin: 0 auto; }
+  .carousel {
+    position: relative;
+    width: 300px;
+    max-width: 70vw;
+    aspect-ratio: 1090 / 2235;
+    border-radius: 50px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.32);
+  }
+  .carousel-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+  .carousel-slide.active { opacity: 1; }
+  .carousel-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.45);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  .carousel-dot.active { background: #fff; }
+
+  /* ---- Features ---- */
+  .section { padding: clamp(56px, 8vw, 88px) 0; }
+  .section-head { max-width: 560px; margin: 0 auto 44px; text-align: center; }
+  .section-head .eyebrow-dark {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .section-head h2 {
+    font-size: clamp(24px, 3vw, 32px);
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+  .section-head p { color: var(--muted); margin: 0; }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+  }
+  .feature-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 26px 22px;
+  }
+  .feature-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .feature-icon svg { width: 24px; height: 24px; }
+  .feature-card h3 {
+    font-size: 16px;
+    margin: 0 0 8px;
+  }
+  .feature-card p {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  /* ---- Pro band ---- */
+  .pro-band {
+    background: var(--ink);
+    border-radius: 24px;
+    margin: 0 16px;
+    padding: clamp(32px, 6vw, 52px);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  @media (min-width: 900px) {
+    .pro-band { margin: 0 auto; max-width: 1120px; }
+  }
+  .pro-band h2 {
+    font-size: clamp(22px, 3vw, 28px);
+    margin: 0 0 8px;
+  }
+  .pro-band p {
+    color: rgba(255,255,255,0.75);
+    max-width: 440px;
+    margin: 0;
+    font-size: 15px;
+  }
+  .pro-tag {
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .pro-list {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .pro-list div {
+    font-size: 14px;
+    color: rgba(255,255,255,0.9);
+  }
+  .pro-list strong { display: block; font-size: 20px; color: #fff; margin-bottom: 2px; }
+
+  /* ---- Footer ---- */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 32px 0 44px;
+    margin-top: 20px;
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
+  .footer-links a {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-copy { color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="wrap">
+    <span class="brand">Rekalp</span>
+    <a class="nav-link" href="https://mywodbook.com/rekalp/contact.html">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-logo">
+        <svg viewBox="0 0 485 178" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rekalp">
+          <g fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M25.955,132.46 L0,132.46 L25.06,7.518 L73.748,7.518 C85.6813333,7.518 94.9595,10.3223333 101.5825,15.931 C108.2055,21.5396667 111.517,29.4753333 111.517,39.738 C111.517,44.392 110.860667,48.9565 109.548,53.4315 C108.235333,57.9065 106.266333,62.0831667 103.641,65.9615 C101.015667,69.8398333 97.8235,73.2408333 94.0645,76.1645 C90.3055,79.0881667 85.92,81.3853333 80.908,83.056 L95.944,132.46 L68.199,132.46 L55.848,86.099 L35.263,86.099 L25.955,132.46 Z M66.409,63.903 C70.4663333,63.903 73.9568333,62.829 76.8805,60.681 C79.8041667,58.533 81.7433333,55.2513333 82.698,50.836 C83.2946667,48.0913333 83.772,45.8538333 84.13,44.1235 C84.488,42.3931667 84.667,41.0506667 84.667,40.096 C84.667,37.3513333 83.7421667,35.0541667 81.8925,33.2045 C80.0428333,31.3548333 77.149,30.43 73.211,30.43 L46.361,30.43 L39.738,63.903 L66.409,63.903 Z"></path>
+            <path d="M140.401755,134.608 C127.036422,134.608 117.072088,130.998167 110.508755,123.7785 C103.945422,116.558833 100.663755,106.684 100.663755,94.154 C100.663755,86.636 101.857088,79.3865 104.243755,72.4055 C106.630422,65.4245 110.031422,59.2788333 114.446755,53.9685 C118.862088,48.6581667 124.232088,44.392 130.556755,41.17 C136.881422,37.948 143.922088,36.337 151.678755,36.337 C155.258755,36.337 159.017755,36.7546667 162.955755,37.59 C166.893755,38.4253333 170.503588,39.8275 173.785255,41.7965 C177.066922,43.7655 179.811588,46.4206667 182.019255,49.762 C184.226922,53.1033333 185.330755,57.3396667 185.330755,62.471 C185.330755,67.3636667 184.197088,71.7491667 181.929755,75.6275 C179.662422,79.5058333 176.142088,82.8471667 171.368755,85.6515 C166.595422,88.4558333 160.449755,90.6635 152.931755,92.2745 C145.413755,93.8855 136.404088,94.87 125.902755,95.228 C125.664088,96.302 125.544755,97.1373333 125.544755,97.734 C125.544755,98.3306667 125.544755,98.8676667 125.544755,99.345 C125.544755,103.879667 126.767922,107.519333 129.214255,110.264 C131.660588,113.008667 135.986422,114.381 142.191755,114.381 C146.249088,114.381 150.037922,113.515833 153.558255,111.7855 C157.078588,110.055167 160.927088,106.564667 165.103755,101.314 L180.497755,113.486 C174.650422,121.242667 168.534588,126.702167 162.150255,129.8645 C155.765922,133.026833 148.516422,134.608 140.401755,134.608 Z M150.246755,55.49 C144.876755,55.49 140.312255,57.2501667 136.553255,60.7705 C132.794255,64.2908333 130.377755,69.094 129.303755,75.18 L128.587755,79.297 C135.270422,78.939 140.729922,78.3423333 144.966255,77.507 C149.202588,76.6716667 152.514088,75.6275 154.900755,74.3745 C157.287422,73.1215 158.898422,71.7193333 159.733755,70.168 C160.569088,68.6166667 160.986755,66.8863333 160.986755,64.977 C160.986755,62.9483333 160.628755,61.3075 159.912755,60.0545 C159.196755,58.8015 158.301755,57.8468333 157.227755,57.1905 C156.153755,56.5341667 154.990255,56.0866667 153.737255,55.848 C152.484255,55.6093333 151.320755,55.49 150.246755,55.49 Z"></path>
+            <path d="M201.68551,-1.42108547e-14 L226.74551,-1.42108547e-14 L211.17251,77.865 L212.42551,77.865 L225.31351,61.755 L247.86751,38.485 L277.04451,38.485 L238.91751,76.612 L251.80551,112.412 L262.72451,112.412 L258.42851,132.46 L245.00351,132.46 C236.172844,132.46 230.265844,127.746333 227.28251,118.319 L219.40651,93.796 L205.26551,107.042 L200.25351,132.46 L175.19351,132.46 L201.68551,-1.42108547e-14 Z"></path>
+            <path d="M330.452265,132.46 C325.917599,132.46 322.158599,131.266667 319.175265,128.88 C316.191932,126.493333 314.700265,123.092333 314.700265,118.677 C314.700265,117.722333 314.759932,116.708 314.879265,115.634 C314.998599,114.56 315.117932,113.784333 315.237265,113.307 L315.774265,110.622 L314.700265,110.622 C311.000932,118.259333 306.824265,124.166333 302.170265,128.343 C297.516265,132.519667 291.489932,134.608 284.091265,134.608 C279.675932,134.608 275.887099,133.8025 272.724765,132.1915 C269.562432,130.5805 266.966932,128.313167 264.938265,125.3895 C262.909599,122.465833 261.417932,119.005167 260.463265,115.0075 C259.508599,111.009833 259.031265,106.684 259.031265,102.03 C259.031265,92.006 260.194765,82.9665 262.521765,74.9115 C264.848765,66.8565 267.981265,59.965 271.919265,54.237 C275.857265,48.509 280.481432,44.0936667 285.791765,40.991 C291.102099,37.8883333 296.740599,36.337 302.707265,36.337 C309.270599,36.337 314.670432,38.127 318.906765,41.707 C323.143099,45.287 325.559599,49.6426667 326.156265,54.774 L327.051265,54.774 L330.273265,38.485 L355.333265,38.485 L340.476265,112.412 L351.037265,112.412 L347.099265,132.46 L330.452265,132.46 Z M296.442265,114.023 C299.664265,114.023 302.587932,113.187667 305.213265,111.517 C307.838599,109.846333 310.105932,107.817667 312.015265,105.431 C314.043932,103.044333 315.804099,100.210167 317.295765,96.9285 C318.787432,93.6468333 319.891265,90.2756667 320.607265,86.815 L323.471265,72.495 C324.425932,68.0796667 323.530932,64.3803333 320.786265,61.397 C318.041599,58.4136667 314.043932,56.922 308.793265,56.922 C297.933932,56.922 291.072265,63.903 288.208265,77.865 L285.702265,90.395 C285.463599,91.7076667 285.224932,93.3783333 284.986265,95.407 C284.747599,97.4356667 284.628265,99.166 284.628265,100.598 C284.628265,104.774667 285.672432,108.056333 287.760765,110.443 C289.849099,112.829667 292.742932,114.023 296.442265,114.023 Z"></path>
+            <path d="M366.49702,132.46 C361.604354,132.46 357.696187,131.147333 354.77252,128.522 C351.848854,125.896667 350.38702,122.436 350.38702,118.14 C350.38702,116.946667 350.56602,115.455 350.92402,113.665 L373.65702,-1.42108547e-14 L398.71702,-1.42108547e-14 L376.16302,112.412 L387.26102,112.412 L383.32302,132.46 L366.49702,132.46 Z"></path>
+            <path d="M401.646776,38.485 L426.706776,38.485 L422.410776,60.323 L423.484776,60.323 C427.184109,52.6856667 431.360776,46.7786667 436.014776,42.602 C440.668776,38.4253333 446.695109,36.337 454.093776,36.337 C458.509109,36.337 462.297942,37.1425 465.460276,38.7535 C468.622609,40.3645 471.218109,42.6318333 473.246776,45.5555 C475.275442,48.4791667 476.767109,51.9398333 477.721776,55.9375 C478.676442,59.9351667 479.153776,64.261 479.153776,68.915 C479.153776,78.939 477.990276,87.9785 475.663276,96.0335 C473.336276,104.0885 470.203776,110.98 466.265776,116.708 C462.327776,122.436 457.703609,126.851333 452.393276,129.954 C447.082942,133.056667 441.444442,134.608 435.477776,134.608 C428.914442,134.608 423.514609,132.818 419.278276,129.238 C415.041942,125.658 412.625442,121.302333 412.028776,116.171 L411.133776,116.171 L400.751776,168.26 L375.691776,168.26 L401.646776,38.485 Z M429.391776,114.023 C440.251109,114.023 447.112776,107.042 449.976776,93.08 L452.482776,80.55 C452.721442,79.2373333 452.960109,77.5666667 453.198776,75.538 C453.437442,73.5093333 453.556776,71.779 453.556776,70.347 C453.556776,66.1703333 452.512609,62.8886667 450.424276,60.502 C448.335942,58.1153333 445.442109,56.922 441.742776,56.922 C438.520776,56.922 435.597109,57.7573333 432.971776,59.428 C430.346442,61.0986667 428.079109,63.1273333 426.169776,65.514 C424.141109,67.9006667 422.380942,70.7348333 420.889276,74.0165 C419.397609,77.2981667 418.293776,80.6693333 417.577776,84.13 L414.713776,98.45 C413.759109,103.223333 414.654109,107.012167 417.398776,109.8165 C420.143442,112.620833 424.141109,114.023 429.391776,114.023 Z"></path>
+          </g>
+          <path d="M0,176.46 C66.1505769,164.254519 127.817244,155.254519 185,149.46 C242.182756,143.665481 305.51609,139.998814 375,138.46 C371.666667,145.126667 368.333333,150.126667 365,153.46 C361.666667,156.793333 358.333333,158.46 355,158.46 C319.430687,158.391214 268.097353,160.057881 201,163.46 C133.902647,166.862119 66.9026466,171.195453 0,176.46 Z" fill="#FFFFFF"></path>
+        </svg>
+      </div>
+      <span class="eyebrow">Gym training, actually tracked</span>
+      <h1>Plan it. Log it. Beat your best.</h1>
+      <p class="lead">Rekalp is the training log for lifters who want more than a notebook — workouts, personal records, and stats that sync across every device you own.</p>
+      <div class="store-row">
+        <span class="store-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.365 1.43c0 1.14-.42 2.1-1.26 2.91-.9.87-1.95 1.32-3.15 1.26-.03-1.11.42-2.1 1.26-2.94.87-.9 1.98-1.35 3.15-1.23zM20.46 17.19c-.42.96-.9 1.83-1.47 2.61-.78 1.08-1.56 2.16-2.82 2.19-1.23.03-1.65-.75-3.06-.75-1.44 0-1.89.72-3.09.78-1.23.06-2.16-1.17-2.97-2.25-1.62-2.19-2.88-6.21-1.2-8.94.84-1.38 2.31-2.25 3.9-2.28 1.2-.03 1.95.81 2.97.81 1.02 0 1.65-.81 3.09-.81 1.26 0 2.61.69 3.57 1.89-3.15 1.95-2.64 6.24.09 7.56z"/></svg>
+          <span><span class="store-label">App Store</span><span class="store-sub">Coming soon</span></span>
+        </span>
+        <span class="store-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.4 13.8 12 3.6 21.6c-.3-.2-.5-.5-.5-.9V3.3c0-.4.2-.7.5-.9zM15 13.2l2.5 2.5-10.3 5.9 7.8-8.4zM21.1 10.7c.6.5.6 1.3 0 1.8l-2.4 1.9L16.1 12l2.6-2.4 2.4 1.1zM15 10.8 7.2 2.4l10.3 5.9L15 10.8z"/></svg>
+          <span><span class="store-label">Google Play</span><span class="store-sub">Coming soon</span></span>
+        </span>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="carousel" id="heroCarousel">
+        <img class="carousel-slide active" src="screenshot_1.png" alt="Rekalp app screenshot 1">
+        <img class="carousel-slide" src="screenshot_2.png" alt="Rekalp app screenshot 2">
+        <img class="carousel-slide" src="screenshot_3.png" alt="Rekalp app screenshot 3">
+        <img class="carousel-slide" src="screenshot_4.png" alt="Rekalp app screenshot 4">
+        <div class="carousel-dots">
+          <button class="carousel-dot active" data-index="0" aria-label="Show screenshot 1"></button>
+          <button class="carousel-dot" data-index="1" aria-label="Show screenshot 2"></button>
+          <button class="carousel-dot" data-index="2" aria-label="Show screenshot 3"></button>
+          <button class="carousel-dot" data-index="3" aria-label="Show screenshot 4"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow-dark">What's inside</span>
+      <h2>Everything you need to train with intent</h2>
+      <p>No spreadsheets, no guessing what you lifted last time.</p>
+    </div>
+    <div class="feature-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="7" y1="3" x2="7" y2="7"/><line x1="17" y1="3" x2="17" y2="7"/><polyline points="8 14 11 17 16 11"/></svg>
+        </div>
+        <h3>Workout planner &amp; calendar</h3>
+        <p>Plan a session ahead of time, or start logging on the spot. Resume exactly where you left off if you get interrupted mid-workout.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="3" height="6" rx="1"/><rect x="19" y="9" width="3" height="6" rx="1"/><rect x="5" y="7" width="2.5" height="10" rx="1"/><rect x="16.5" y="7" width="2.5" height="10" rx="1"/><line x1="7.5" y1="12" x2="16.5" y2="12"/></svg>
+        </div>
+        <h3>Full exercise catalog</h3>
+        <p>Hundreds of exercises tagged by muscle group, equipment, and category — plus your own custom moves when the catalog doesn't cover it.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 5H5a2 2 0 0 0 0 4h1.5"/><path d="M16 5h3a2 2 0 0 1 0 4h-1.5"/><line x1="12" y1="13" x2="12" y2="17"/><line x1="9" y1="20" x2="15" y2="20"/></svg>
+        </div>
+        <h3>Personal records</h3>
+        <p>Rekalp notices when you beat a lift automatically while you're training, or you can log a record yourself whenever you want.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="20" y2="20"/><rect x="6" y="13" width="3" height="7"/><rect x="11" y="9" width="3" height="11"/><rect x="16" y="5" width="3" height="15"/></svg>
+        </div>
+        <h3>Stats &amp; measurements</h3>
+        <p>Weekly and monthly training stats, a weekly goal you set for yourself, and body measurements including BMI tracked over time.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><line x1="12" y1="13" x2="12" y2="9"/><line x1="12" y1="13" x2="15" y2="15"/><line x1="9" y1="2" x2="15" y2="2"/><line x1="12" y1="2" x2="12" y2="5"/></svg>
+        </div>
+        <h3>Built-in timers</h3>
+        <p>Chrono, AMRAP, Interval, and EMOM timers, right alongside your workout — no separate stopwatch app needed.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="1"/><path d="M12 7v10"/><path d="M7 7v4"/><path d="M17 7v4"/></svg>
+        </div>
+        <h3>Weight calculator</h3>
+        <p>Work out plate loading and percentages straight from your own logged numbers, not a generic chart.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="pro-band">
+    <div>
+      <h2><span class="pro-tag">Rekalp Pro</span> for the serious lifter</h2>
+      <p>An optional subscription, available right inside the app.</p>
+    </div>
+    <div class="pro-list">
+      <div><strong>Ad&#8209;free</strong>No interruptions mid-set.</div>
+      <div><strong>More devices</strong>Sign in everywhere you train.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="https://mywodbook.com/rekalp/terms" target="_blank" rel="noopener noreferrer">Terms</a>
+      <a href="https://mywodbook.com/rekalp/conditions" target="_blank" rel="noopener noreferrer">Conditions</a>
+      <a href="https://mywodbook.com/rekalp/contact.html">Contact</a>
+    </div>
+    <span class="footer-copy">&copy; 2026 BRT Digital Media. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.getElementById('heroCarousel');
+  if (!root) return;
+  var slides = root.querySelectorAll('.carousel-slide');
+  var dots = root.querySelectorAll('.carousel-dot');
+  var index = 0;
+  var timer;
+
+  function show(i) {
+    index = i;
+    slides.forEach(function (s, n) { s.classList.toggle('active', n === i); });
+    dots.forEach(function (d, n) { d.classList.toggle('active', n === i); });
+  }
+
+  function next() {
+    show((index + 1) % slides.length);
+  }
+
+  function restart() {
+    clearInterval(timer);
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      timer = setInterval(next, 4500);
+    }
+  }
+
+  dots.forEach(function (dot) {
+    dot.addEventListener('click', function () {
+      show(parseInt(dot.dataset.index, 10));
+      restart();
+    });
+  });
+
+  restart();
+})();
+</script>
+
+</body>
+</html>

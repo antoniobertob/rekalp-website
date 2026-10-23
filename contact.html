@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact - Rekalp</title>
+<style>
+  :root {
+    --accent: #ff6b1a;
+    --ink: #1c1c1e;
+    --muted: #5b5b60;
+    --line: #e7e5e2;
+    --card-bg: #ffffff;
+    --page-bg: #f6f4f1;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px 16px 64px;
+    background: var(--page-bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  .doc {
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 40px clamp(20px, 6vw, 48px);
+    text-align: center;
+  }
+  .brand {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-size: 28px;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+  .intro {
+    font-size: 16px;
+    color: var(--muted);
+    margin: 0 0 28px;
+  }
+  .email-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff4ec;
+    border: 1px solid #ffdcc2;
+    border-radius: 12px;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #8a4a1f;
+    word-break: break-all;
+  }
+  .email-card a {
+    color: #8a4a1f;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+  .email-card a:hover { opacity: 0.8; }
+  .back-link {
+    display: inline-block;
+    margin-top: 28px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+  .back-link:hover { opacity: 0.8; }
+  footer {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+  <span class="brand">Rekalp</span>
+  <h1>Get in touch</h1>
+  <p class="intro">Questions, feedback, or something not working as expected? Send us an email and we'll get back to you.</p>
+
+  <div class="email-card">
+    <a href="mailto:rekalpfitness+contact@gmail.com">rekalpfitness+contact@gmail.com</a>
+  </div>
+
+  <div>
+    <a class="back-link" href="index.html">&larr; Back to home</a>
+  </div>
+
+  <footer>&copy; 2026 BRT Digital Media. All rights reserved.</footer>
+</div>
+</body>
+</html>
