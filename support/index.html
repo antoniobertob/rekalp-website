@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soporte — Rekalp</title>
+<meta name="description" content="¿Necesitas ayuda con Rekalp? Contacto y preguntas frecuentes.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://rekalp.com/support">
+<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="wrap">
+    <a href="../index.html"><img class="brand-logo" src="../assets/logo.svg" alt="Rekalp"></a>
+    <div class="lang-switch"><button type="button" data-lang-switch="es-ES" aria-label="Español"><img src="../assets/icons/flag_es.svg" alt=""></button><button type="button" data-lang-switch="en" aria-label="English"><img src="../assets/icons/flag_en.svg" alt=""></button></div>
+  </div>
+</nav>
+
+<div class="doc">
+  <h1 data-i18n="support.title">¿Necesitas ayuda?</h1>
+
+  <h2 data-i18n="support.contactTitle">Contacto</h2>
+  <p data-i18n="support.contactBody">¿Tienes alguna pregunta? Escríbenos y te respondemos en 48 horas laborables.</p>
+  <p>
+    <a class="btn" id="support-mailto" href="#" data-i18n="support.contactButton">Escribir un correo</a>
+  </p>
+
+  <h2 data-i18n="support.faqTitle">Preguntas frecuentes</h2>
+
+  <p><strong data-i18n="support.q1">No me llega el código de verificación.</strong></p>
+  <p data-i18n="support.a1">Revisa spam; el código caduca a los 10 minutos; pide uno nuevo.</p>
+
+  <p><strong data-i18n="support.q2">¿Cómo funciona Rekalp Pro y cómo lo cancelo?</strong></p>
+  <p data-i18n="support.a2">Se gestiona desde la suscripción de App Store o Google Play. Cancélala desde los ajustes de tu cuenta de Apple o Google, no desde Rekalp.</p>
+
+  <p><strong data-i18n="support.q3">Me han cerrado la sesión en otro dispositivo.</strong></p>
+  <p data-i18n="support.a3">El plan gratuito permite 1 dispositivo a la vez; Pro, hasta 3.</p>
+
+  <p><strong data-i18n="support.q4">¿Cómo elimino mi cuenta?</strong></p>
+  <p><span data-i18n="support.a4">Visita la</span> <a href="../delete-account/index.html" data-i18n="support.a4Link">página de eliminar cuenta</a>.</p>
+
+  <div class="note" data-i18n="support.responseTime">Respondemos en 48 horas laborables.</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="../support/index.html" data-i18n="footer.support">Soporte</a>
+      <a href="../privacy/index.html" data-i18n="footer.privacy">Privacidad</a>
+      <a href="../terms/index.html" data-i18n="footer.terms">Términos</a>
+      <a href="../legal/index.html" data-i18n="footer.legal">Aviso legal</a>
+      <a href="../delete-account/index.html" data-i18n="footer.deleteAccount">Eliminar cuenta</a>
+    </div>
+    <span class="footer-copy" data-i18n="footer.copyright">© 2026 Rekalp</span>
+  </div>
+</footer>
+
+<script src="../js/i18n.js"></script>
+<script>
+document.getElementById('support-mailto').href =
+  'mailto:rekalpfitness+contact@gmail.com?subject=' + encodeURIComponent('Ayuda con Rekalp') +
+  '&body=' + 'Hola%2C%20necesito%20ayuda%20con%20lo%20siguiente%3A%0D%0A%0D%0A';
+</script>
+
+</body>
+</html>

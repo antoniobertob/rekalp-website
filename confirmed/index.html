@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¡Estás dentro! — Rekalp</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="wrap">
+    <a href="../index.html"><img class="brand-logo" src="../assets/logo.svg" alt="Rekalp"></a>
+    <div class="lang-switch"><button type="button" data-lang-switch="es-ES" aria-label="Español"><img src="../assets/icons/flag_es.svg" alt=""></button><button type="button" data-lang-switch="en" aria-label="English"><img src="../assets/icons/flag_en.svg" alt=""></button></div>
+  </div>
+</nav>
+
+<div class="simple-page">
+  <div class="simple-card">
+    <h1 data-i18n="confirmed.title">¡Estás dentro!</h1>
+    <p data-i18n="confirmed.body">Te avisaremos el día del lanzamiento.</p>
+
+    <div style="margin-top:36px; padding-top:28px; border-top:1px solid var(--line);">
+      <p data-i18n="confirmed.shareTitle">¿Conoces a alguien que apunte sus entrenos en Notas?</p>
+      <div class="share-row">
+        <button class="btn btn-secondary" id="copy-link-btn" data-i18n="confirmed.shareCopyLink" type="button">Copiar enlace</button>
+        <a class="btn" id="whatsapp-share-btn" target="_blank" rel="noopener noreferrer" data-i18n="confirmed.shareWhatsapp" href="#">Compartir por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="../support/index.html" data-i18n="footer.support">Soporte</a>
+      <a href="../privacy/index.html" data-i18n="footer.privacy">Privacidad</a>
+      <a href="../terms/index.html" data-i18n="footer.terms">Términos</a>
+      <a href="../legal/index.html" data-i18n="footer.legal">Aviso legal</a>
+      <a href="../delete-account/index.html" data-i18n="footer.deleteAccount">Eliminar cuenta</a>
+    </div>
+    <span class="footer-copy" data-i18n="footer.copyright">© 2026 Rekalp</span>
+  </div>
+</footer>
+
+<script src="../js/i18n.js"></script>
+<script>
+(function () {
+  var shareUrl = 'https://rekalp.com/?src=compartir';
+  var copyBtn = document.getElementById('copy-link-btn');
+  var waBtn = document.getElementById('whatsapp-share-btn');
+
+  waBtn.href = 'https://wa.me/?text=' + encodeURIComponent(shareUrl);
+
+  copyBtn.addEventListener('click', function () {
+    navigator.clipboard.writeText(shareUrl).then(function () {
+      var original = copyBtn.textContent;
+      copyBtn.textContent = (window.Rekalp && window.Rekalp.dict)
+        ? window.Rekalp.dict.confirmed.shareCopied
+        : '¡Copiado!';
+      setTimeout(function () { copyBtn.textContent = original; }, 2000);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
