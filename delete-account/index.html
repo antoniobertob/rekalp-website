@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eliminar cuenta — Rekalp</title>
+<meta name="description" content="Cómo eliminar tu cuenta de Rekalp, desde la app o por correo.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://rekalp.com/delete-account">
+<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="wrap">
+    <a href="../index.html"><img class="brand-logo" src="../assets/logo.svg" alt="Rekalp"></a>
+    <div class="lang-switch"><button type="button" data-lang-switch="es-ES" aria-label="Español"><img src="../assets/icons/flag_es.svg" alt=""></button><button type="button" data-lang-switch="en" aria-label="English"><img src="../assets/icons/flag_en.svg" alt=""></button></div>
+  </div>
+</nav>
+
+<div class="doc">
+  <h1 data-i18n="deleteAccount.title">Eliminar tu cuenta de Rekalp</h1>
+
+  <h2 data-i18n="deleteAccount.fromAppTitle">Desde la app (recomendado)</h2>
+  <p data-i18n="deleteAccount.fromAppBody">Perfil → Ajustes → Eliminar cuenta.</p>
+
+  <h2 data-i18n="deleteAccount.withoutAppTitle">Sin la app</h2>
+  <p data-i18n="deleteAccount.withoutAppBody">Escríbenos desde el correo de tu cuenta con el asunto «Eliminar cuenta». Plazo: máximo 30 días.</p>
+  <p>
+    <a class="btn" id="delete-mailto" href="#" data-i18n="deleteAccount.mailtoButton">Escribir correo para eliminar mi cuenta</a>
+  </p>
+
+  <div class="note">
+    <strong data-i18n="deleteAccount.subscriptionWarningTitle">Importante sobre tu suscripción</strong><br>
+    <span data-i18n="deleteAccount.subscriptionWarningBody">Eliminar la cuenta no cancela tu suscripción de Rekalp Pro. Cancélala antes desde los ajustes de tu cuenta de App Store o Google Play — eliminar la cuenta no detiene el cobro.</span>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="../support/index.html" data-i18n="footer.support">Soporte</a>
+      <a href="../privacy/index.html" data-i18n="footer.privacy">Privacidad</a>
+      <a href="../terms/index.html" data-i18n="footer.terms">Términos</a>
+      <a href="../legal/index.html" data-i18n="footer.legal">Aviso legal</a>
+      <a href="../delete-account/index.html" data-i18n="footer.deleteAccount">Eliminar cuenta</a>
+    </div>
+    <span class="footer-copy" data-i18n="footer.copyright">© 2026 Rekalp</span>
+  </div>
+</footer>
+
+<script src="../js/i18n.js"></script>
+<script>
+document.getElementById('delete-mailto').href =
+  'mailto:rekalpfitness+legal@gmail.com?subject=' + encodeURIComponent('Eliminar cuenta') +
+  '&body=' + 'Hola%2C%20quiero%20eliminar%20mi%20cuenta%20de%20Rekalp%20asociada%20a%20este%20correo%20electr%C3%B3nico.%0D%0A%0D%0AGracias.';
+</script>
+
+</body>
+</html>
