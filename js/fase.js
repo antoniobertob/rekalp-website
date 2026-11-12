@@ -5,7 +5,7 @@
   // 0 = before launch (waitlist only), 1 = launched, 2 = trainer feature live.
   // Flip this one number and redeploy — never rewrite page content for a
   // phase change.
-  var FASE = 0;
+  var FASE = 1;
 
   function applyFase() {
     document.querySelectorAll('[data-fase]').forEach(function (el) {
