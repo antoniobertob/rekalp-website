@@ -13,8 +13,12 @@
     "deleteAccount": "Eliminar cuenta",
     "copyright": "© 2026 Rekalp"
   },
+  "stores": {
+    "appleSub": "Descárgala en el",
+    "googleSub": "Disponible en"
+  },
   "home": {
-    "eyebrow": "Muy pronto en iOS y Android",
+    "eyebrow": "Ya disponible en iOS y Android",
     "title": "Anota todos tus progresos en el gimnasio",
     "subtitle": "La app de entrenamiento que separa tu plan de lo que has hecho y guarda tus récords sola.",
     "noSpamNote": "Muy pronto en iOS y Android.",
@@ -44,6 +48,8 @@
       "a1": "Sí. Rekalp es gratis con anuncios. Rekalp Pro quita los anuncios y te deja usarla en hasta 3 dispositivos (2,99 €/mes o 19,99 €/año).",
       "q2": "¿Cuándo sale?",
       "a2": "Muy pronto. Apúntate y te avisamos el primer día.",
+      "q2Live": "¿Dónde la descargo?",
+      "a2Live": "En el App Store para iPhone y en Google Play para Android.",
       "q3": "¿En qué móviles funciona?",
       "a3": "iPhone y Android.",
       "a4Link": "Política de privacidad"

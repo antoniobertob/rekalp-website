@@ -13,8 +13,12 @@
     "deleteAccount": "Delete account",
     "copyright": "© 2026 Rekalp"
   },
+  "stores": {
+    "appleSub": "Download on the",
+    "googleSub": "Get it on"
+  },
   "home": {
-    "eyebrow": "Coming soon to iOS and Android",
+    "eyebrow": "Now available on iOS and Android",
     "title": "Track every bit of progress at the gym",
     "subtitle": "The training app that separates your plan from what you did, and saves your records on its own.",
     "noSpamNote": "Coming soon to iOS and Android.",
@@ -44,6 +48,8 @@
       "a1": "Yes. Rekalp is free with ads. Rekalp Pro removes ads and lets you use it on up to 3 devices (€2.99/month or €19.99/year).",
       "q2": "When does it launch?",
       "a2": "Very soon. Sign up and we'll let you know on day one.",
+      "q2Live": "Where do I download it?",
+      "a2Live": "On the App Store for iPhone and on Google Play for Android.",
       "q3": "Which phones does it work on?",
       "a3": "iPhone and Android.",
       "a4Link": "Privacy policy"

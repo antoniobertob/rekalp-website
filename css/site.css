@@ -115,7 +115,8 @@ nav.topbar .wrap { display: flex; align-items: center; justify-content: space-be
 }
 .store-badge svg { width: 22px; height: 22px; flex-shrink: 0; }
 .store-badge .store-label { font-weight: 700; display: block; font-size: 13px; }
-.store-badge .store-sub { color: var(--muted); font-size: 11px; }
+.store-badge .store-sub { color: var(--muted); font-size: 11px; display: block; }
+a.store-badge:hover { opacity: 1; border-color: var(--ink); }
 
 /* ---- Sections ---- */
 .section { padding: clamp(48px, 8vw, 80px) 0; }
