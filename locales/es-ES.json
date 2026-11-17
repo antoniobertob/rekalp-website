@@ -2,7 +2,6 @@
   "nav": {
     "trainersLink": "Para entrenadores",
     "usersLink": "Para usuarios",
-    "ctaWaitlist": "Avísame del lanzamiento",
     "ctaDownload": "Descargar"
   },
   "footer": {
@@ -21,7 +20,6 @@
     "eyebrow": "Ya disponible en iOS y Android",
     "title": "Anota todos tus progresos en el gimnasio",
     "subtitle": "La app de entrenamiento que separa tu plan de lo que has hecho y guarda tus récords sola.",
-    "noSpamNote": "Muy pronto en iOS y Android.",
     "advantages": {
       "title": "Todo lo que necesitas para entrenar en serio",
       "item1Title": "Tu plan sigue siendo tu plan.",
@@ -29,124 +27,75 @@
       "item2Title": "Los récords te encuentran a ti.",
       "item2Body": "Al terminar el entreno, Rekalp guarda tus nuevas marcas.",
       "item3Title": "Más de 600 ejercicios con imágenes.",
-      "item3Body": "Instrucciones paso a paso, en español."
-    },
-    "allInOne": {
-      "title": "Todo en una app",
-      "timers": "Temporizadores: Crono, AMRAP, Intervalos, EMOM",
-      "measurements": "Medidas corporales e IMC",
-      "offline": "Funciona sin cobertura y sincroniza al volver"
+      "item3Body": "Instrucciones paso a paso, en tu idioma.",
+      "item4Title": "Temporizadores para cada entreno.",
+      "item4Body": "Crono, AMRAP, Intervalos y EMOM.",
+      "item5Title": "Tus medidas, siempre a mano.",
+      "item5Body": "Peso, grasa corporal, perímetros e IMC, con su evolución.",
+      "item6Title": "Sin cobertura, sin problema.",
+      "item6Body": "Funciona sin conexión y se sincroniza al volver.",
+      "item7Title": "Entrena con un profesional.",
+      "item7Body": "Encuentra un entrenador personal cerca de ti.",
+      "item8Title": "Repite sin volver a escribir.",
+      "item8Body": "Guarda tus entrenos como plantillas y planifica semanas en segundos."
     },
     "trainerBlock": {
       "title": "¿Eres entrenador personal?",
-      "body": "Muy pronto podrás asignar entrenamientos y ver lo que ha hecho cada cliente.",
-      "cta": "Únete como entrenador fundador"
+      "body": "Asigna entrenamientos, organiza tus sesiones y sigue el progreso de cada cliente en Rekalp.",
+      "cta": "Rekalp para entrenadores"
     },
     "faq": {
       "title": "Preguntas frecuentes",
       "q1": "¿Es gratis?",
       "a1": "Sí. Rekalp es gratis con anuncios. Rekalp Pro quita los anuncios y te deja usarla en hasta 3 dispositivos (2,99 €/mes o 19,99 €/año).",
-      "q2": "¿Cuándo sale?",
-      "a2": "Muy pronto. Apúntate y te avisamos el primer día.",
       "q2Live": "¿Dónde la descargo?",
       "a2Live": "En el App Store para iPhone y en Google Play para Android.",
       "q3": "¿En qué móviles funciona?",
       "a3": "iPhone y Android.",
       "a4Link": "Política de privacidad"
-    },
-    "finalCta": "Avísame del lanzamiento"
-  },
-  "waitlistForm": {
-    "emailLabel": "Correo",
-    "emailPlaceholder": "tucorreo@ejemplo.com",
-    "consentLabel": "Acepto recibir correos sobre el lanzamiento de Rekalp. Puedo darme de baja cuando quiera.",
-    "consentPrivacyLink": "Política de privacidad",
-    "submitUsers": "Avísame del lanzamiento",
-    "submitTrainers": "Únete como entrenador fundador",
-    "legalNoteEnd": "Más información en la",
-    "errorEmail": "Revisa el correo",
-    "errorConsent": "Marca la casilla para continuar",
-    "errorGeneric": "Algo ha fallado, inténtalo de nuevo",
-    "submitting": "Enviando…"
+    }
   },
   "trainers": {
-    "title": "Asigna el entrenamiento. Mira lo que ha hecho de verdad.",
-    "subtitle": "Rekalp para entrenadores llega muy pronto. Buscamos 50 entrenadores fundadores con ventajas exclusivas.",
+    "eyebrow": "Ya disponible en iOS y Android",
+    "title": "Asigna el entrenamiento. Sigue su progreso.",
+    "subtitle": "Planes, sesiones, chat y el progreso de cada cliente, todo en Rekalp.",
+    "shot1Alt": "Panel del entrenador en Rekalp",
+    "shot2Alt": "Progreso de entrenamientos de un cliente",
+    "shot3Alt": "Medidas corporales de un cliente",
     "problem": {
       "title": "¿Te suena esto?",
       "labelProblem": "El problema",
       "labelSolution": "Con Rekalp",
       "pair1Problem": "Rutinas por WhatsApp o PDF.",
       "pair1Solution": "Todo el plan, en una sola app.",
-      "pair2Problem": "«¿Has hecho el entreno?» «Sí, sí.»",
-      "pair2Solution": "Ves si ha entrenado, y cuándo, sin preguntar.",
-      "pair3Problem": "No sabes qué pesos ha levantado de verdad.",
-      "pair3Solution": "Series, repeticiones y pesos reales, registrados a medida que avanza el entrenamiento.",
+      "pair2Problem": "No sabes cuándo ha entrenado.",
+      "pair2Solution": "Ves cada entreno en cuanto lo termina.",
+      "pair3Problem": "Los resultados te llegan sueltos, si llegan.",
+      "pair3Solution": "Series, repeticiones y pesos, guardados a medida que entrena.",
       "pair4Problem": "Cada cliente sigue el plan a su manera.",
       "pair4Solution": "Tu cliente ve exactamente lo que has planificado, tal cual.",
       "pair5Problem": "Pierdes tiempo apuntando el progreso a mano.",
       "pair5Solution": "El progreso de cada cliente se guarda solo."
     },
     "howItWorks": {
-      "title": "Cómo funcionará",
-      "step1": "Creas la rutina y se la asignas a tu cliente.",
-      "step2": "Tu cliente la sigue en Rekalp, gratis.",
-      "step3": "Ves sus series, repeticiones y pesos reales."
+      "title": "Cómo funciona",
+      "step1": "Creas tu perfil de entrenador y verificas tu identidad.",
+      "step2": "Tus clientes te encuentran cerca de ellos o con tu código, y te envían una solicitud.",
+      "step3": "Les asignas entrenamientos, organizas las sesiones y habláis por chat.",
+      "step4": "Ves sus series, repeticiones y pesos, y sus medidas si las comparte."
     },
-    "founders": {
-      "title": "Programa de entrenadores fundadores",
-      "earlyBonus": "Los 20 primeros entrenadores fundadores tendrán un 50 % de descuento para siempre, en vez del 30 %.",
-      "perk1": "2 meses gratis de cualquier plan.",
-      "perk2": "30 % de descuento para siempre mientras sigas suscrito.",
-      "perk3": "Acceso anticipado y línea directa con el creador para pedir funciones.",
-      "ask": "A cambio: una conversación de 20 minutos para contarnos cómo trabajas."
-    },
-    "joinCta": {
-      "title": "¿Te apuntas?",
-      "body": "Sé uno de los 50 entrenadores fundadores y consigue tus ventajas exclusivas."
-    },
-    "nameLabel": "Nombre",
-    "namePlaceholder": "Tu nombre",
-    "cityLabel": "Ciudad",
-    "cityPlaceholder": "Opcional",
-    "workModeLabel": "Trabajas…",
-    "workModePresencial": "Presencial",
-    "workModeOnline": "Online",
-    "workModeAmbos": "Ambos",
-    "clientCountLabel": "Número de clientes",
-    "clientCount1": "1–5",
-    "clientCount2": "6–15",
-    "clientCount3": "16–30",
-    "clientCount4": "Más de 30",
-    "instagramLabel": "Instagram profesional",
-    "instagramPlaceholder": "Opcional",
-    "consentLabel": "Acepto que Rekalp me contacte sobre el programa de entrenadores fundadores y me envíe novedades relacionadas. Puedo darme de baja cuando quiera.",
-    "submitCta": "Únete como entrenador fundador",
-    "phase1Note": "La app para tus clientes ya está disponible: pueden empezar a usarla hoy.",
     "pricing": {
-      "title": "Planes",
-      "note": "Precios con IVA incluido. Tus clientes usan Rekalp gratis.",
-      "planFree": "Gratis", "planFreeClients": "1", "planFreeMonthly": "0 €", "planFreeYearly": "—",
-      "planStarter": "Starter", "planStarterClients": "5", "planStarterMonthly": "9,99 €", "planStarterYearly": "7,99 €",
-      "planPro15": "Pro 15", "planPro15Clients": "15", "planPro15Monthly": "24,99 €", "planPro15Yearly": "19,99 €",
-      "planPro30": "Pro 30", "planPro30Clients": "30", "planPro30Monthly": "44,99 €", "planPro30Yearly": "35,99 €",
-      "planPro50": "Pro 50", "planPro50Clients": "50", "planPro50Monthly": "64,99 €", "planPro50Yearly": "51,99 €"
+      "title": "Precios",
+      "colClients": "Clientes",
+      "colMonthly": "Al mes",
+      "price5": "19,99 €",
+      "price10": "39,99 €",
+      "price15": "59,99 €",
+      "price20": "79,99 €",
+      "note": "Precios para España, IVA incluido. En otros países verás el precio local en la app. Tus clientes usan Rekalp gratis.",
+      "moreClients": "¿Más de 20 clientes?",
+      "contactLink": "Escríbenos"
     }
-  },
-  "thanks": {
-    "title": "¡Ya estás en la lista!",
-    "body": "Te avisaremos en cuanto lancemos Rekalp.",
-    "trainerNote": "Te escribiremos pronto para agendar la conversación de 20 minutos.",
-    "followTiktok": "Síguenos en TikTok",
-    "followInstagram": "Síguenos en Instagram"
-  },
-  "confirmed": {
-    "title": "¡Estás dentro!",
-    "body": "Te avisaremos el día del lanzamiento.",
-    "shareTitle": "¿Conoces a alguien que apunte sus entrenos en Notas?",
-    "shareCopyLink": "Copiar enlace",
-    "shareCopied": "¡Copiado!",
-    "shareWhatsapp": "Compartir por WhatsApp"
   },
   "download": {
     "title": "Rekalp está disponible en iOS y Android.",
@@ -222,7 +171,7 @@
     "s2Purchases": "Compras: el estado de tus suscripciones, que nos confirman Apple o Google. Nunca vemos los datos de tu tarjeta.",
     "s2Analytics": "Estadísticas de uso: cómo se usan las funciones de la app, ligadas a un identificador aleatorio, no a tu nombre ni a tu correo.",
     "s2Ads": "Publicidad (solo en el plan gratuito): nuestro socio publicitario puede usar el identificador publicitario de tu dispositivo, con tu consentimiento cuando la ley lo exige.",
-    "s2Web": "Web: el correo y los datos que nos das en los formularios de lista de espera, de dónde has llegado y datos técnicos básicos.",
+    "s2Web": "Web: datos técnicos básicos de tu visita.",
     "s2Support": "Soporte: los mensajes que nos envías.",
     "s3Title": "3. Para qué los usamos y con qué base legal",
     "s3Contract": "Para darte la app y las funciones que pides: tu cuenta, la sincronización, Entrenador personal y las suscripciones (base: el contrato contigo).",
@@ -233,7 +182,6 @@
     "s3Ads": "Para mostrar anuncios en el plan gratuito, y anuncios personalizados solo con tu consentimiento cuando se exige.",
     "s3Notify": "Para enviarte las notificaciones que has permitido, como mensajes, avisos de sesiones o recordatorios (base: tu permiso, que controlas en los ajustes del dispositivo).",
     "s3Legal": "Para cumplir obligaciones legales, como conservar registros de compras o atender a las autoridades (base: obligación legal).",
-    "s3Waitlist": "Para avisarte del lanzamiento si te apuntas a una lista de espera (base: tu consentimiento).",
     "s4Title": "4. Quién puede ver tus datos",
     "s4Users": "Otros usuarios de Rekalp: todo el mundo puede ver el perfil público de un entrenador. El entrenador al que envías una solicitud ve tu nombre, tu foto, tu edad, tu distancia aproximada, tus objetivos, el plan que eliges y tu mensaje, nunca tu correo, tu fecha de nacimiento ni tu ubicación exacta. Si compartes tus limitaciones de salud, también las ve. Mientras entrenáis juntos, ve los resultados de los entrenamientos que te asigna y, si aceptas compartirlas, tus medidas corporales. Tus estrellas cuentan para la media pública del entrenador; el comentario solo lo ve el entrenador, junto a tu nombre.",
     "s4Providers": "Proveedores que trabajan para nosotros: alojamiento y bases de datos, mensajería y notificaciones, almacenamiento de imágenes, envío de correos, verificación de identidad, estadísticas de uso y herramientas de soporte. Cada uno solo recibe los datos que necesita para su función, nunca más. Por ejemplo, el almacenamiento de imágenes solo guarda las fotos y documentos que subes, sin tu correo ni otros datos de tu cuenta, y el envío de correos solo recibe tu dirección y el código de acceso.",

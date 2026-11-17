@@ -2,7 +2,6 @@
   "nav": {
     "trainersLink": "For trainers",
     "usersLink": "For users",
-    "ctaWaitlist": "Notify me at launch",
     "ctaDownload": "Download"
   },
   "footer": {
@@ -21,7 +20,6 @@
     "eyebrow": "Now available on iOS and Android",
     "title": "Track every bit of progress at the gym",
     "subtitle": "The training app that separates your plan from what you did, and saves your records on its own.",
-    "noSpamNote": "Coming soon to iOS and Android.",
     "advantages": {
       "title": "Everything you need to train seriously",
       "item1Title": "Your plan stays your plan.",
@@ -29,124 +27,75 @@
       "item2Title": "Records find you.",
       "item2Body": "When you finish a workout, Rekalp saves your new bests.",
       "item3Title": "600+ exercises with pictures.",
-      "item3Body": "Step-by-step instructions, in Spanish."
-    },
-    "allInOne": {
-      "title": "Everything in one app",
-      "timers": "Timers: Chrono, AMRAP, Interval, EMOM",
-      "measurements": "Body measurements and BMI",
-      "offline": "Works offline and syncs when you're back"
+      "item3Body": "Step-by-step instructions, in your language.",
+      "item4Title": "Timers for every workout.",
+      "item4Body": "Chrono, AMRAP, Interval and EMOM.",
+      "item5Title": "Your measurements, always at hand.",
+      "item5Body": "Weight, body fat, girths and BMI, with their trend.",
+      "item6Title": "No signal, no problem.",
+      "item6Body": "Works offline and syncs when you're back.",
+      "item7Title": "Train with a pro.",
+      "item7Body": "Find a personal trainer near you.",
+      "item8Title": "Repeat without retyping.",
+      "item8Body": "Save workouts as templates and plan whole weeks in seconds."
     },
     "trainerBlock": {
       "title": "Are you a personal trainer?",
-      "body": "Soon you'll be able to assign workouts and see exactly what each client did.",
-      "cta": "Join as a founding trainer"
+      "body": "Assign workouts, plan your sessions and follow each client's progress in Rekalp.",
+      "cta": "Rekalp for trainers"
     },
     "faq": {
       "title": "Frequently asked questions",
       "q1": "Is it free?",
       "a1": "Yes. Rekalp is free with ads. Rekalp Pro removes ads and lets you use it on up to 3 devices (€2.99/month or €19.99/year).",
-      "q2": "When does it launch?",
-      "a2": "Very soon. Sign up and we'll let you know on day one.",
       "q2Live": "Where do I download it?",
       "a2Live": "On the App Store for iPhone and on Google Play for Android.",
       "q3": "Which phones does it work on?",
       "a3": "iPhone and Android.",
       "a4Link": "Privacy policy"
-    },
-    "finalCta": "Notify me at launch"
-  },
-  "waitlistForm": {
-    "emailLabel": "Email",
-    "emailPlaceholder": "you@example.com",
-    "consentLabel": "I agree to receive emails about Rekalp's launch. I can unsubscribe anytime.",
-    "consentPrivacyLink": "Privacy policy",
-    "submitUsers": "Notify me at launch",
-    "submitTrainers": "Join as a founding trainer",
-    "legalNoteEnd": "More information in the",
-    "errorEmail": "Check your email",
-    "errorConsent": "Check the box to continue",
-    "errorGeneric": "Something went wrong, try again",
-    "submitting": "Sending…"
+    }
   },
   "trainers": {
-    "title": "Assign the workout. See what they actually did.",
-    "subtitle": "Rekalp for trainers is launching soon. We're looking for 50 founding trainers, with exclusive perks.",
+    "eyebrow": "Now available on iOS and Android",
+    "title": "Assign the workout. Follow their progress.",
+    "subtitle": "Plans, sessions, chat and each client's progress, all in Rekalp.",
+    "shot1Alt": "Trainer dashboard in Rekalp",
+    "shot2Alt": "A client's workout progress",
+    "shot3Alt": "A client's body measurements",
     "problem": {
       "title": "Sound familiar?",
       "labelProblem": "The problem",
       "labelSolution": "With Rekalp",
       "pair1Problem": "Routines over WhatsApp or a PDF.",
       "pair1Solution": "The whole plan, in one app.",
-      "pair2Problem": "\"Did you do the workout?\" \"Yeah, sure.\"",
-      "pair2Solution": "You see if and when they trained — no need to ask.",
-      "pair3Problem": "You don't know what weight they actually moved.",
-      "pair3Solution": "Real sets, reps, and weights, logged as the workout happens.",
+      "pair2Problem": "You don't know when they trained.",
+      "pair2Solution": "You see each workout as soon as they finish it.",
+      "pair3Problem": "Results reach you in bits and pieces, if at all.",
+      "pair3Solution": "Sets, reps and weights, saved as they train.",
       "pair4Problem": "Every client follows the plan their own way.",
       "pair4Solution": "Your client sees exactly what you planned, as you planned it.",
       "pair5Problem": "You waste time writing down progress by hand.",
       "pair5Solution": "Each client's progress saves itself."
     },
     "howItWorks": {
-      "title": "How it will work",
-      "step1": "You create the routine and assign it to your client.",
-      "step2": "Your client follows it in Rekalp, for free.",
-      "step3": "You see their real sets, reps, and weights."
+      "title": "How it works",
+      "step1": "You create your trainer profile and verify your identity.",
+      "step2": "Clients find you nearby or with your code, and send you a request.",
+      "step3": "You assign workouts, plan sessions and chat with them.",
+      "step4": "You see their sets, reps and weights, and their measurements if they share them."
     },
-    "founders": {
-      "title": "Founding trainers program",
-      "earlyBonus": "The first 20 founding trainers get 50% off forever, instead of 30%.",
-      "perk1": "2 months free of any plan.",
-      "perk2": "30% off forever while subscribed.",
-      "perk3": "Early access and a direct line to the creator to request features.",
-      "ask": "In exchange: a 20-minute conversation to tell us how you work."
-    },
-    "joinCta": {
-      "title": "Ready to join?",
-      "body": "Be one of the 50 founding trainers and get your exclusive perks."
-    },
-    "nameLabel": "Name",
-    "namePlaceholder": "Your name",
-    "cityLabel": "City",
-    "cityPlaceholder": "Optional",
-    "workModeLabel": "You work…",
-    "workModePresencial": "In person",
-    "workModeOnline": "Online",
-    "workModeAmbos": "Both",
-    "clientCountLabel": "Number of clients",
-    "clientCount1": "1–5",
-    "clientCount2": "6–15",
-    "clientCount3": "16–30",
-    "clientCount4": "More than 30",
-    "instagramLabel": "Professional Instagram",
-    "instagramPlaceholder": "Optional",
-    "consentLabel": "I agree to be contacted by Rekalp about the founding trainers program and related updates. I can unsubscribe anytime.",
-    "submitCta": "Join as a founding trainer",
-    "phase1Note": "The app for your clients is already available: they can start using it today.",
     "pricing": {
-      "title": "Plans",
-      "note": "Prices include VAT. Your clients use Rekalp for free.",
-      "planFree": "Free", "planFreeClients": "1", "planFreeMonthly": "€0", "planFreeYearly": "—",
-      "planStarter": "Starter", "planStarterClients": "5", "planStarterMonthly": "€9.99", "planStarterYearly": "€7.99",
-      "planPro15": "Pro 15", "planPro15Clients": "15", "planPro15Monthly": "€24.99", "planPro15Yearly": "€19.99",
-      "planPro30": "Pro 30", "planPro30Clients": "30", "planPro30Monthly": "€44.99", "planPro30Yearly": "€35.99",
-      "planPro50": "Pro 50", "planPro50Clients": "50", "planPro50Monthly": "€64.99", "planPro50Yearly": "€51.99"
+      "title": "Pricing",
+      "colClients": "Clients",
+      "colMonthly": "Per month",
+      "price5": "€19.99",
+      "price10": "€39.99",
+      "price15": "€59.99",
+      "price20": "€79.99",
+      "note": "Prices for Spain, VAT included. In other countries the app shows your local price. Your clients use Rekalp for free.",
+      "moreClients": "More than 20 clients?",
+      "contactLink": "Write to us"
     }
-  },
-  "thanks": {
-    "title": "You're on the list!",
-    "body": "We'll let you know as soon as Rekalp launches.",
-    "trainerNote": "We'll reach out soon to schedule the 20-minute conversation.",
-    "followTiktok": "Follow us on TikTok",
-    "followInstagram": "Follow us on Instagram"
-  },
-  "confirmed": {
-    "title": "You're in!",
-    "body": "We'll let you know on launch day.",
-    "shareTitle": "Know someone who logs their workouts in Notes?",
-    "shareCopyLink": "Copy link",
-    "shareCopied": "Copied!",
-    "shareWhatsapp": "Share on WhatsApp"
   },
   "download": {
     "title": "Rekalp is available on iOS and Android.",
@@ -222,7 +171,7 @@
     "s2Purchases": "Purchases: the status of your subscriptions, which Apple or Google confirm to us. We never see your card details.",
     "s2Analytics": "Usage statistics: how the app's features are used, linked to a random identifier, not to your name or email.",
     "s2Ads": "Ads (free plan only): our advertising partner may use your device's advertising identifier, with your consent where the law requires it.",
-    "s2Web": "Website: the email and details you give in the waitlist forms, where you came from and basic technical data.",
+    "s2Web": "Website: basic technical data about your visit.",
     "s2Support": "Support: the messages you send us.",
     "s3Title": "3. Why we use it and on what legal basis",
     "s3Contract": "To give you the app and the features you ask for: your account, syncing, Personal Trainer and subscriptions (basis: our contract with you).",
@@ -233,7 +182,6 @@
     "s3Ads": "To show ads in the free plan, and personalised ads only with your consent where required.",
     "s3Notify": "To send the notifications you've allowed, such as messages, session alerts or reminders (basis: your permission, which you control in your device settings).",
     "s3Legal": "To meet legal duties, such as keeping purchase records or answering authorities (basis: legal obligation).",
-    "s3Waitlist": "To tell you about the launch if you join a waitlist (basis: your consent).",
     "s4Title": "4. Who can see your data",
     "s4Users": "Other Rekalp users: everyone can see a trainer's public profile. A trainer you send a request to sees your name, photo, age, approximate distance, goals, the plan you choose and your message, never your email, date of birth or exact location. If you share your health limitations, they see them too. While you train together, they see the results of the workouts they assign you and, if you agree to share them, your body measurements. Your stars count toward the trainer's public average; only the trainer sees the comment, with your name.",
     "s4Providers": "Service providers working for us: hosting and databases, messaging and notifications, image storage, email delivery, identity verification, usage statistics and support tools. Each one only receives the data it needs for its job, never more. For example, image storage only keeps the photos and documents you upload, without your email or other account details, and email delivery only receives your address and the sign-in code.",

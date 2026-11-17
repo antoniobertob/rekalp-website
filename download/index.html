@@ -49,13 +49,6 @@
 <script src="../js/i18n.js"></script>
 <script>
 (function () {
-  // Mirrors js/fase.js (not loaded here); FASE 0 bounces home since no store listing exists then.
-  var FASE = 1;
-  if (FASE === 0) {
-    window.location.replace('../index.html');
-    return;
-  }
-
   var src = new URLSearchParams(window.location.search).get('src') || 'directo';
   var ua = navigator.userAgent || '';
   var isIOS = /iPad|iPhone|iPod/.test(ua);
