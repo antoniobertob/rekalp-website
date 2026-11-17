@@ -30,16 +30,6 @@
         if (typeof value === 'string') el.setAttribute(attr, value);
       });
     });
-
-    // The waitlist forms' hidden consent-text (sent to the backend as
-    // proof of what was agreed to) must track whichever language is
-    // currently displayed, not stay frozen in whatever language the page
-    // first loaded in — otherwise switching to English and submitting
-    // would silently record Spanish consent text that was never shown.
-    document.querySelectorAll('[data-consent-text-key]').forEach(function (el) {
-      var value = resolve(dict, el.getAttribute('data-consent-text-key'));
-      if (typeof value === 'string') el.setAttribute('data-consent-text', value);
-    });
   }
 
   // Figure out where this very script was loaded from (an absolute URL by
